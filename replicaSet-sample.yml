@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: app-rs
+spec:
+  replicas: 5
+  minReadySeconds: 20
+  selector:
+    matchLabels:
+      role: webserver
+    matchExpressions:
+      - {key: version, operator: In, values: [v1, v2, v3]}
+  template:
+    metadata:
+      name: app
+      labels:
+        app: my-app
+        role: webserver
+        version: v1
+    spec:
+      containers:
+        - name: app
+          image: ravikiran529/httpd:v1
+          ports:
+            - containerPort: 80
+              protocol: TCP
