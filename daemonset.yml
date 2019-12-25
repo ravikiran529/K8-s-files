@@ -1,0 +1,7 @@
+apiVersion: 
+kind: DaemonSet
+metadata: 
+  name: sample-ds
+spec:
+  containers:
+  
