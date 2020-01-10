@@ -1,3 +1,20 @@
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: pv-volume1  
+  labels:
+    type: local
+spec:
+  capacity:    
+    storage: 10Gi
+  accessModes:    
+    - ReadWriteOnce
+  hostPath:    
+    path: "/mnt/data1"
+
+
+---
 apiVersion: v1
 kind: PersistentVolume
 metadata:
