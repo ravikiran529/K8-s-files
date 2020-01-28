@@ -42,6 +42,7 @@ nodeRegistration:
  ---------------------------------   
     
  join node to the cluster using this command:
+ 
  ---> kubeadm join — config /etc/kubernetes/node.yml
  
  
