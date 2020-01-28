@@ -16,14 +16,15 @@ controllerManager:
   extraArgs:
     cloud-provider: "aws"
     
-_-----------------------------    
+-----------------------------    
     
 initialize cluster using following command:
 
 ---> kubeadm init — config /etc/kubernetes/aws.yml
 
-#node.yml
+-----------------------------------------------------------------------------------------------
 
+# node.yml
 ---
 apiVersion: kubeadm.k8s.io/v1beta1
 kind: JoinConfiguration
@@ -37,6 +38,8 @@ nodeRegistration:
   name: ip-10-0-0-186.eu-west-3.compute.internal
   kubeletExtraArgs:
     cloud-provider: aws
+    
+ ---------------------------------   
     
  join node to the cluster using this command:
  ---> kubeadm join — config /etc/kubernetes/node.yml
